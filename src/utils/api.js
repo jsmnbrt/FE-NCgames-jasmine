@@ -15,4 +15,14 @@ function fetchReviews() {
     });
 }
 
+export function fetchCommentByReviewID() {
+  return gameReviewAPI
+    .get("/reviews/:review_id/comments/:comment_id")
+    .then((res) => {
+    return res.data
+    })
+    .catch((err) => {
+    console.log(err)
+  })
+}
 export default fetchReviews;
