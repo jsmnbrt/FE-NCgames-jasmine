@@ -18,19 +18,18 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.reviewCard {
+  padding: 2em;
+  border:#ea64bd 4px solid;
+  background-color: rgb(12, 229, 12);
+  border-radius: 20px;
+  margin: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.header {
+  border: rgb(239, 239, 24) 4px solid;
+  border-radius: 12px;
+  padding: 1rem;
 }
 
 .card {
@@ -40,3 +39,12 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.app {
+  border: green 4px solid;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+
