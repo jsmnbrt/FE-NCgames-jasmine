@@ -1,18 +1,12 @@
-import { useEffect, useState } from "react";
+import React from "react";
+import Header from "./Header";
 
-const Home = () => {
-  // const [Reviews, setReviews] = useState([])
-  // useEffect(() => {
-  //   fetchReviews().
-  //   }
-  // , []);
-  // console.log(currentReviews)
-  // return (
-  //   <ul>
-  //     {currentReviews.map((reviews) => {
-  //     })}
-  //   </ul>
-  // )
-};
+const Home = () => { 
+  return (
+    <>
+    <Header></Header>
+    </>
+  )
+}
 
 export default Home;

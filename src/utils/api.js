@@ -4,7 +4,7 @@ const gameReviewAPI = axios.create({
   baseURL: "https://jasmines-nc-games.onrender.com/api",
 });
 
-function fetchReviews() {
+export function fetchReviews() {
   return gameReviewAPI
     .get("/reviews", {})
     .then((res) => {
@@ -15,4 +15,8 @@ function fetchReviews() {
     });
 }
 
-export default fetchReviews;
+export function fetchReviewByID(review_id) {
+  return gameReviewAPI.get(`/reviews/${review_id}`).then((res) => {
+    return res.data;
+  });
+}
