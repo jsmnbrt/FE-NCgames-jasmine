@@ -6,15 +6,17 @@ import NavBar from "./components/NavBar";
 import Header from "./components/Header";
 
 import "./App.css";
+import GameReviewCard from "./components/GameReviewCard";
 
 const App = () => {
   return (
     <>
-      <NavBar></NavBar>
-      <Header></Header>
+      <Header />
+      <NavBar />
       <div className="App">
         <Routes>
           <Route path="/reviews" element={<ReviewList />} />
+          <Route path="/reviews/:review_id" element={<GameReviewCard />} />
         </Routes>
       </div>
     </>
@@ -22,3 +24,5 @@ const App = () => {
 };
 
 export default App;
+
+
