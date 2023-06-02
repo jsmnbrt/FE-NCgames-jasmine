@@ -11,8 +11,8 @@ import GameReviewCard from "./components/GameReviewCard";
 const App = () => {
   return (
     <>
-      <NavBar></NavBar>
-      <Header></Header>
+      <Header />
+      <NavBar />
       <div className="App">
         <Routes>
           <Route path="/reviews" element={<ReviewList />} />
@@ -24,3 +24,5 @@ const App = () => {
 };
 
 export default App;
+
+
