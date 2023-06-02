@@ -20,31 +20,14 @@
 
 .reviewCard {
   padding: 2em;
-  border:#ea64bd 4px solid;
+  border: #ea64bd 4px solid;
   background-color: rgb(12, 229, 12);
   border-radius: 20px;
   margin: 20px;
 }
 
-.header {
-  border: rgb(239, 239, 24) 4px solid;
-  border-radius: 12px;
-  padding: 1rem;
-}
+
 
 .card {
   padding: 2em;
 }
-
-.read-the-docs {
-  color: #888;
-}
-
-
-.app {
-  border: green 4px solid;
-  border-radius: 12px;
-  padding: 1rem;
-}
-
-

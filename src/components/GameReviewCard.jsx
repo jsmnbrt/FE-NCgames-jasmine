@@ -1,26 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-const GameReviewCard = ({
-  title,
-  designer,
-  category,
-  review_img_url,
-  owner,
-}) => {
+import { fetchReviewByID } from "../utils/api";
+
+const GameReviewCard = () => {
+  const [currentReview, setCurrentReview] = useState({});
   const { review_id } = useParams();
+
+  useEffect(() => {
+    fetchReviewByID(review_id)
+      .then((data) => {
+        setCurrentReview(data.review);
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [review_id]);
+
   return (
     <>
-      <Link to={`/reviews/${review_id}`}>
-        <li className="reviewCard">
-          <p>Title: {title}</p>
-          <p>Designer: {designer}</p>
-          <p>Category: {category}</p>
-          <img id="gameImg" src={review_img_url} alt={title} />
-          <p>Owner: {owner}</p>
-          <p>Votes: {votes}</p>
-        </li>
-      </Link>
+      <li className="reviewCard">
+        <h2>Title: {currentReview.title}</h2>
+        <img
+          id="gameImg"
+          src={currentReview.review_img_url}
+          alt={currentReview.title}
+        />
+        <p>Designer: {currentReview.designer}</p>
+        <p>Category: {currentReview.category}</p>
+        <p><em>{currentReview.review_body}</em></p>
+        <p>Owner: {currentReview.owner}</p>
+        <p>Votes: {currentReview.votes}</p>
+      </li>
     </>
   );
 };

@@ -1,7 +1,8 @@
 import GameReviewCard from "./GameReviewCard";
-import axios from "axios";
+
 import React, { useState, useEffect } from "react";
-import fetchReviews from "../utils/api";
+import { Link } from "react-router-dom";
+import { fetchReviews } from "../utils/api";
 
 function ReviewList() {
   const [reviews, setReviews] = useState([]);
@@ -27,16 +28,18 @@ function ReviewList() {
   }
 
   return (
-    <div>
+    <ul >
       {reviews.map((review) => (
-        <div key={reviews.review_id}>
-          <h3>{review.title}</h3>
-          <img src={review.review_img_url} alt={review.title} />
-          <p>Category: {review.category}</p>
-          <p>Comments: {review.comment_count}</p>
-        </div>
+        <Link to={`/reviews/${review.review_id}`}>
+          <li key={reviews.review_id} className="reviewCard">
+            <h2>{review.title}</h2>
+            <img src={review.review_img_url} alt={review.title} />
+            <p>Category: {review.category}</p>
+            <p>Comments: {review.comment_count}</p>
+          </li>
+        </Link>
       ))}
-    </div>
+    </ul>
   );
 }
 
